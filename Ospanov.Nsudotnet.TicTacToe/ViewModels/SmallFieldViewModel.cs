@@ -1,8 +1,8 @@
 ﻿using Caliburn.Micro;
 using System.Windows;
-using TickTackToe.Models;
+using TicTacToe.Models;
 
-namespace TickTackToe.ViewModels
+namespace TicTacToe.ViewModels
 {
     public class SmallFieldViewModel : PropertyChangedBase
     {

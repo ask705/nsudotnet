@@ -1,4 +1,4 @@
-﻿namespace TickTackToe.Models
+﻿namespace TicTacToe.Models
 {
     public enum StateCell
     {

@@ -1,7 +1,7 @@
 ﻿using Caliburn.Micro;
-using TickTackToe.Models;
+using TicTacToe.Models;
 
-namespace TickTackToe.ViewModels
+namespace TicTacToe.ViewModels
 {
     public class CellViewModel : PropertyChangedBase
     {

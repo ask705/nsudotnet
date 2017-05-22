@@ -1,8 +1,8 @@
 ﻿using Caliburn.Micro;
-using TickTackToe.Models;
-using TickTackToe.Views;
+using TicTacToe.Models;
+using TicTacToe.Views;
 
-namespace TickTackToe.ViewModels
+namespace TicTacToe.ViewModels
 {
     public class MainViewModel : Screen
     {

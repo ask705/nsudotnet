@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TickTackToe.Models
+namespace TicTacToe.Models
 {
     public class LargeField : FieldCell
     {

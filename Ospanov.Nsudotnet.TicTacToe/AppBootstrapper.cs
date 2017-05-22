@@ -7,9 +7,9 @@ using System.Windows;
 using Autofac;
 using Caliburn.Micro;
 using Caliburn.Micro.Autofac;
-using TickTackToe.ViewModels;
+using TicTacToe.ViewModels;
 
-namespace TickTackToe
+namespace TicTacToe
 {
     public class AppBootstrapper : AutofacBootstrapper<MainViewModel>
     {

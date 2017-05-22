@@ -10,17 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TicTacToe.Models;
 
-namespace TickTackToe.Views
+namespace TicTacToe.Views
 {
     /// <summary>
-    /// Interaction logic for LargeFieldViewModel.xaml
+    /// Interaction logic for MainView.xaml
     /// </summary>
-    public partial class LargeFieldViewModel : UserControl
+    public partial class MainView : Window
     {
-        public LargeFieldViewModel()
+        public MainView()
         {
             InitializeComponent();
         }

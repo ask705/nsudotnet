@@ -12,10 +12,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TickTackToe.Models;
-using TickTackToe.ViewModels;
+using TicTacToe.Models;
+using TicTacToe.ViewModels;
 
-namespace TickTackToe.Views
+namespace TicTacToe.Views
 {
     /// <summary>
     /// Логика взаимодействия для WinView.xaml

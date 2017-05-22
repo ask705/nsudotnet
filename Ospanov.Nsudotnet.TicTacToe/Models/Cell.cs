@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace TickTackToe.Models
+namespace TicTacToe.Models
 {
 
     public delegate void StateCellChangedEventHandler(StateCell stateCell); 
