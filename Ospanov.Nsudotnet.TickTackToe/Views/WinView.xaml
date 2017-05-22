@@ -1,0 +1,24 @@
+﻿<Window x:Class="TickTackToe.Views.WinView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TickTackToe.Views"
+        mc:Ignorable="d"
+        Title="WinView" Height="300" Width="300" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20" Padding="0" FontSize="36" FontWeight="Bold">Победа</TextBlock>
+        <Image x:Name="image" Source="Resources/Cross.png" Visibility="Visible" Grid.Row="1"/>
+        <Button IsDefault="True" Content="Новая игра" Click="NewGame"  Margin="5" MaxWidth="100" MaxHeight="50" Grid.Row="2" />
+        <Button Content="Продолжить" IsCancel="True" Margin="5" MaxWidth="100" MaxHeight="50" Grid.Column="1" Grid.Row="2" Click="CloseWindow" />
+    </Grid>
+</Window>
