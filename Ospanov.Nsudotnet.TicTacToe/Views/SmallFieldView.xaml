@@ -9,11 +9,11 @@
     <Border Name="Border" Margin="10">
         <Border.Background>
             <LinearGradientBrush >
-                <GradientStop Offset="1" Color="#FF345734"/>
+                <GradientStop Offset="1" Color="{Binding BackgroundColor}"/>
             </LinearGradientBrush>
         </Border.Background>
         <Canvas  Name="Field">
-            <ItemsControl  VirtualizingStackPanel.IsVirtualizing="True" Height="150" Width="165" ItemsSource="{Binding Cells}">
+            <ItemsControl  VirtualizingStackPanel.IsVirtualizing="True" Height="150" Width="165" ItemsSource="{Binding Cells}" IsEnabled="{Binding IsEnabled}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <local:CellView DataContext="{Binding}"></local:CellView>

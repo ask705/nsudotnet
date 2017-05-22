@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using System.Windows;
+using System.Windows.Media;
 using TicTacToe.Models;
 
 namespace TicTacToe.ViewModels
@@ -8,6 +9,11 @@ namespace TicTacToe.ViewModels
     {
         public CellViewModel[] Cells { get; set; }
         private Models.FieldCell fieldCell;
+
+        private bool isEnabled = true;
+        private Color activColor = Color.FromRgb(47,129,47);
+        private Color defaultColor = Color.FromRgb(52, 87, 52);
+        private Color backgroundColor = Color.FromRgb(52, 87, 52);
 
         public StateCell State
         {
@@ -35,6 +41,33 @@ namespace TicTacToe.ViewModels
                 NotifyOfPropertyChange(() => crossState);
             }
         }
+        public Color BackgroundColor
+        {
+            get => backgroundColor; set
+            {
+                if (value == backgroundColor) return;
+                backgroundColor = value;
+                NotifyOfPropertyChange(() => backgroundColor);
+            }
+        }
+
+        public bool IsEnabled { get => isEnabled;
+            set
+            {
+                if (value == isEnabled) return;
+                if (value == true)
+                {
+                    BackgroundColor = activColor;
+                }
+                else
+                {
+                    BackgroundColor = defaultColor;
+                }
+                isEnabled = value;
+                NotifyOfPropertyChange(() => isEnabled);
+            }
+        }
+
 
         protected System.Windows.Visibility circleState=Visibility.Hidden;
         protected System.Windows.Visibility crossState=Visibility.Hidden;

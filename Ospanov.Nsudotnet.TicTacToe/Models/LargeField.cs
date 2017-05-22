@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace TicTacToe.Models
 {
+    public delegate void FocusFieldChangedEventHandler(int x, int y);
     public class LargeField : FieldCell
     {
         new protected int n = 3;
         private FieldCell focusFiledCell;
         private FieldCell[,] FieldsCells;
+
+        public event FocusFieldChangedEventHandler FocusFieldChangedEvent = StubFocusFieldChangedEnent;
+
+        private static void StubFocusFieldChangedEnent(int x, int y)
+        {
+        }
+
         public LargeField() {
             Cells = new FieldCell[n, n];
             for (int i = 0; i < n; i++)
@@ -32,7 +40,20 @@ namespace TicTacToe.Models
 
         public void SetFocusFieldCell(int x, int y)
         {
-            FocusFiledCell = Cells[x, y];
+            if (FocusFiledCell == Cells[y, x])
+            {
+                return;
+            }
+            FocusFiledCell = Cells[y, x];
+            if (FocusFiledCell.IsFulled())
+            {
+                FocusFiledCell = null;
+                FocusFieldChangedEvent(-1, -1);
+            }
+            else
+            {
+                FocusFieldChangedEvent(x, y);
+            }
         }
 
         public new bool CheckOnWin(int x, int y, StateCell sign)

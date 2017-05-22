@@ -50,10 +50,10 @@ namespace TicTacToe.Models
 
         public void CellChangeState(int x, int y, StateCell state)
         {
-            //if (field != null)
-            //{
-            //    field.SetFocusFieldCell(x, y);
-            //}
+            if (Field != null)
+            {
+                Field.SetFocusFieldCell(x, y);
+            }
             if (State != StateCell.Empty)
             {
                 return;
@@ -62,6 +62,18 @@ namespace TicTacToe.Models
             {
                 Win(state);
             }
+        }
+
+        public bool IsFulled()
+        {
+            foreach (Cell cell in cells)
+            {
+                if (cell.IsEmpty())
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public FieldCell(int x, int y, int n, LargeField field) : base(x, y, field)

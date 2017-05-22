@@ -1,4 +1,5 @@
-﻿using Caliburn.Micro;
+﻿using System;
+using Caliburn.Micro;
 using TicTacToe.Models;
 
 namespace TicTacToe.ViewModels
@@ -18,8 +19,29 @@ namespace TicTacToe.ViewModels
             
                 Fields[i] = new SmallFieldViewModel(Field.getCell(i % 3, i / 3));
                 Field.StateCellChangedEvent += ChangedState;
+                Field.FocusFieldChangedEvent += FocusFieldChangedHandler;
             }
         }
+        private void FocusFieldChangedHandler(int x, int y)
+        {
+            if (x < 0)
+            {
+                foreach (SmallFieldViewModel smallField in Fields)
+                {
+                    smallField.IsEnabled = true;
+                }
+                return;
+            }
+            else
+            {
+                foreach (SmallFieldViewModel smallField in Fields)
+                {
+                    smallField.IsEnabled = false;
+                }
+                Fields[y * 3 + x].IsEnabled = true;
+            }
+        }
+
         public void ChangedState(StateCell state)
         {
         }
